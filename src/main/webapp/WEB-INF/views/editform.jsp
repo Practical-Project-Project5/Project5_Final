@@ -17,10 +17,11 @@
 <form:form modelAttribute="u" method="POST" action="../editok">
 <form:hidden path="seq"/>
 <table id="edit">
-<tr><td>Title:</td><td><form:input path="title" /></td></tr>
-<tr><td>Writer:</td><td><form:input path="writer"  /></td></tr>
-<tr><td>Content:</td><td><form:textarea cols="50" rows="5" path="content" /></td></tr>
-	<tr><td>Category:</td><td><form:input path="category"  /></td></tr>
+<tr><td>userid:</td><td><form:input path="userid" /></td></tr>
+<tr><td>username:</td><td><form:input path="username"  /></td></tr>
+<tr><td>email:</td><td><form:input path="email"  /></td></tr>
+<tr><td>githubname:</td><td><form:input path="githubname"  /></td></tr>
+<tr><td>intro:</td><td><form:textarea cols="50" rows="5" path="intro" /></td></tr>
 
 </table>
 	<tr><td colspan="2"><input type="submit" value="Edit Post"/>

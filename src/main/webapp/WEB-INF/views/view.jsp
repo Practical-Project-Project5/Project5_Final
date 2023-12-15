@@ -14,10 +14,11 @@
 
 <h1>View Form</h1>
 <table id="edit">
-    <tr><td>Title:</td><td>${u.title}</td></tr>
-    <tr><td>Writer:</td><td>${u.writer}</td></tr>
-    <tr><td>Content:</td><td>${u.content}</td></tr>
-    <tr><td>Category:</td><td>${u.category}</td></tr>
+    <tr><td>userid:</td><td>${u.userid}</td></tr>
+    <tr><td>username:</td><td>${u.username}</td></tr>
+    <tr><td>email:</td><td>${u.username}</td></tr>
+    <tr><td>githubname:</td><td>${u.githubname}</td></tr>
+    <tr><td>intro:</td><td>${u.intro}</td></tr>
 
 </table>
 <input type="button" value="Cancel" onclick="history.back()"/></td></tr>

@@ -10,49 +10,54 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class BoardDAO {
+public class ProjectDAO {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public int insertBoard(BoardVO vo) {
-        String sql = "insert into BOARD (title, writer, content, category) values ("+"'"+vo.getTitle()+"',"+"'"+vo.getWriter()+"',"+"'"+vo.getContent()+"',"+"'"+vo.getCategory()+"')";
+    public int insertBoard(ProjectVO vo) {
+        String sql = "insert into PROJECT (userid, username, email, githubname, intro, project, stack) values ("+"'"+vo.getUserid()+"',"+"'"+vo.getUsername()+"',"+"'"+vo.getEmail()+"',"+"'"+vo.getGithubname()+"',"+"'"+vo.getIntro()+"',"+"'"+vo.getProject()+"',"+"'"+vo.getStack()+"')";
         return jdbcTemplate.update(sql);
     }
 
     public int deleteBoard(int seq) {
-        String sql = "delete from BOARD where seq = " + seq;
+        String sql = "delete from PROJECT where seq = " + seq;
         return jdbcTemplate.update(sql);
     }
-    public int updateBoard(BoardVO vo) {
-        String sql = "update BOARD set title= '" + vo.getTitle() + "', "
-                + " title='" + vo.getTitle() + "', "
-                + " writer='" + vo.getWriter() + "', "
-                + " content='" + vo.getContent() + "', "
-                + " category='" + vo.getCategory() + "' where seq=" + vo.getSeq();
+    public int updateBoard(ProjectVO vo) {
+        String sql = "update PROJECT set userid= '" + vo.getUserid() + "', "
+                + " userid='" + vo.getUserid() + "', "
+                + " username='" + vo.getUsername() + "', "
+                + " email='" + vo.getEmail() + "', "
+                + " githubname='" + vo.getGithubname() + "', "
+                + " intro='" + vo.getIntro() + "', "
+                + " project='" + vo.getProject() + "', "
+                + " stack='" + vo.getStack() + "' where seq=" + vo.getSeq();
         return jdbcTemplate.update(sql);
     }
-    class BoardRowMapper implements RowMapper<BoardVO> {
+    class BoardRowMapper implements RowMapper<ProjectVO> {
         @Override
-        public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-            BoardVO vo = new BoardVO();
+        public ProjectVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+            ProjectVO vo = new ProjectVO();
             vo.setSeq(rs.getInt("seq"));
-            vo.setTitle(rs.getString("title"));
-            vo.setContent(rs.getString("content"));
-            vo.setWriter(rs.getString("writer"));
-            vo.setCategory(rs.getString("category"));
+            vo.setUserid(rs.getString("userid"));
+            vo.setUsername(rs.getString("username"));
+            vo.setEmail(rs.getString("email"));
+            vo.setGithubname(rs.getString("githubname"));
+            vo.setIntro(rs.getString("intro"));
+            vo.setProject(rs.getString("project"));
+            vo.setStack(rs.getString("stack"));
             vo.setRegdate(rs.getDate("regdate"));
-//            vo.setUpdateDate(rs.getDate("updateDate"));
             return vo;
         }
     }
 
-    public BoardVO getBoard(int seq){
-        String sql = "select * from BOARD where seq=" + seq;
+    public ProjectVO getBoard(int seq){
+        String sql = "select * from PROJECT where seq=" + seq;
         return jdbcTemplate.queryForObject(sql, new BoardRowMapper());
     }
 
-    public List<BoardVO> getBoardList(){
-        String sql = "select * from BOARD order by regdate desc";
+    public List<ProjectVO> getBoardList(){
+        String sql = "select * from PROJECT order by regdate desc";
         return jdbcTemplate.query(sql, new BoardRowMapper());
     }
 }

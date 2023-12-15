@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%@page import="com.example.board.BoardDAO, com.example.board.BoardVO,java.util.*"%>
+<%@page import="com.example.project.ProjectDAO, com.example.project.ProjectVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -8,94 +8,94 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>free board</title>
 <style>
-#list {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-#list td, #list th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align:center;
-}
-#list tr:nth-child(even){background-color: #f2f2f2;}
-#list tr:hover {background-color: #ddd;}
-#list th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #79c9f6;
-  color: white;
-}
-.index-myBookManager {
-	padding-top: 12px;
-	width: 300px;
-	font-size: 30px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-}
+<%--#list {--%>
+<%--  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;--%>
+<%--  border-collapse: collapse;--%>
+<%--  width: 100%;--%>
+<%--}--%>
+<%--#list td, #list th {--%>
+<%--  border: 1px solid #ddd;--%>
+<%--  padding: 8px;--%>
+<%--  text-align:center;--%>
+<%--}--%>
+<%--#list tr:nth-child(even){background-color: #f2f2f2;}--%>
+<%--#list tr:hover {background-color: #ddd;}--%>
+<%--#list th {--%>
+<%--  padding-top: 12px;--%>
+<%--  padding-bottom: 12px;--%>
+<%--  text-align: center;--%>
+<%--  background-color: #79c9f6;--%>
+<%--  color: white;--%>
+<%--}--%>
+<%--.index-myBookManager {--%>
+<%--	padding-top: 12px;--%>
+<%--	width: 300px;--%>
+<%--	font-size: 30px;--%>
+<%--	font-family: Georgia, 'Times New Roman', Times, serif;--%>
+<%--}--%>
 
-.index-myBookManager:hover {
-	cursor: pointer;
-}
-.index-bookList {
-	font-size: 20px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	width: 30%;
-}
+<%--.index-myBookManager:hover {--%>
+<%--	cursor: pointer;--%>
+<%--}--%>
+<%--.index-bookList {--%>
+<%--	font-size: 20px;--%>
+<%--	font-family: Georgia, 'Times New Roman', Times, serif;--%>
+<%--	width: 30%;--%>
+<%--}--%>
 
-.index-line1 {
-	box-shadow: 0 4px 4px -4px #808080FF;
-	margin-bottom: 2%;
-	padding-bottom: 1px;
-	display: flex;
-	justify-content: space-between;
-}
-.index-line2 {
-	display: flex;
-	justify-content: space-between;
-	box-shadow: 0 4px 4px -4px #808080FF;
-	/* margin-bottom: 3%; */
-}
-.navbar {
-	margin-top: 10px;
-	margin-right: 5px;
-	width: 280px;
-	right: 0%;
-	/* position: absolute; */
-	display: flex;
-	/* background-color: #333; */
-}
+<%--.index-line1 {--%>
+<%--	box-shadow: 0 4px 4px -4px #808080FF;--%>
+<%--	margin-bottom: 2%;--%>
+<%--	padding-bottom: 1px;--%>
+<%--	display: flex;--%>
+<%--	justify-content: space-between;--%>
+<%--}--%>
+<%--.index-line2 {--%>
+<%--	display: flex;--%>
+<%--	justify-content: space-between;--%>
+<%--	box-shadow: 0 4px 4px -4px #808080FF;--%>
+<%--	/* margin-bottom: 3%; */--%>
+<%--}--%>
+<%--.navbar {--%>
+<%--	margin-top: 10px;--%>
+<%--	margin-right: 5px;--%>
+<%--	width: 280px;--%>
+<%--	right: 0%;--%>
+<%--	/* position: absolute; */--%>
+<%--	display: flex;--%>
+<%--	/* background-color: #333; */--%>
+<%--}--%>
 
-/* Style the navigation bar links */
-.navbar a {
-	height: 40px;
-	width: 100px;
-	color: royalblue;
-	padding-top: 10px;
-	text-decoration: none;
-	text-align: center;
-	border-radius: 10px;
-	margin-bottom: 10px;
-	margin-left: 1px;
-	margin-right: 1px;
-}
+<%--/* Style the navigation bar links */--%>
+<%--.navbar a {--%>
+<%--	height: 40px;--%>
+<%--	width: 100px;--%>
+<%--	color: royalblue;--%>
+<%--	padding-top: 10px;--%>
+<%--	text-decoration: none;--%>
+<%--	text-align: center;--%>
+<%--	border-radius: 10px;--%>
+<%--	margin-bottom: 10px;--%>
+<%--	margin-left: 1px;--%>
+<%--	margin-right: 1px;--%>
+<%--}--%>
 
-/* Change color on hover */
-.navbar a:hover {
-	background-color: royalblue;
-	border-radius: 10px;
-	color: white;
-}
-.add-button {
-	margin-right: 5%;
-	padding-top: 5px;
-	padding-left: 11px;
-	width: 50px;
-	height: 30px;
-	border-radius: 6px;
-	background-color: rgba(20, 137, 33, 0.767);
-	color: white;
-}
+<%--/* Change color on hover */--%>
+<%--.navbar a:hover {--%>
+<%--	background-color: royalblue;--%>
+<%--	border-radius: 10px;--%>
+<%--	color: white;--%>
+<%--}--%>
+<%--.add-button {--%>
+<%--	margin-right: 5%;--%>
+<%--	padding-top: 5px;--%>
+<%--	padding-left: 11px;--%>
+<%--	width: 50px;--%>
+<%--	height: 30px;--%>
+<%--	border-radius: 6px;--%>
+<%--	background-color: rgba(20, 137, 33, 0.767);--%>
+<%--	color: white;--%>
+<%--}--%>
 .edit-img {
 	margin-top: 4px;
 	width: 20px;
@@ -103,36 +103,36 @@
 	margin-right: 5px;
 }
 
-.edit-img:hover {
-	cursor: pointer;
-}
+<%--.edit-img:hover {--%>
+<%--	cursor: pointer;--%>
+<%--}--%>
 
 .delete-img {
 	width: 20px;
 	height: 20px;
 }
 
-.footer {
-	display: flex;
-}
+<%--.footer {--%>
+<%--	display: flex;--%>
+<%--}--%>
 
-.footer-content {
-	margin-top: 17px;
-	color: grey;
-	font-size: 12px;
-}
+<%--.footer-content {--%>
+<%--	margin-top: 17px;--%>
+<%--	color: grey;--%>
+<%--	font-size: 12px;--%>
+<%--}--%>
 
-.delete-img:hover {
-	cursor: pointer;
-}
+<%--.delete-img:hover {--%>
+<%--	cursor: pointer;--%>
+<%--}--%>
 
-.add-button:hover {
-	cursor: pointer;
-}
+<%--.add-button:hover {--%>
+<%--	cursor: pointer;--%>
+<%--}--%>
 
-* {
-	box-sizing: border-box;
-}
+<%--* {--%>
+<%--	box-sizing: border-box;--%>
+<%--}--%>
 </style>
 <script>
 	function delete_ok(id){
@@ -165,21 +165,27 @@
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
-	<th>Title (click->view page)</th>
-	<th>Writer</th>
-	<th>Content</th>
-	<th>Regdate</th>
-	<th>Category</th>
+	<th>userid (click->view page)</th>
+	<th>username</th>
+	<th>email</th>
+	<th>githubname</th>
+	<th>intro</th>
+	<th>project</th>
+	<th>stack</th>
+	<th>regdate</th>
 	<th>Menu</th>
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr class="box">
 		<td>${u.seq}</td>
-		<td onclick="location.href='view/${u.seq}'">${u.title}</td>
-		<td>${u.writer}</td>
-		<td>${u.content}</td>
+		<td onclick="location.href='view/${u.seq}'">${u.userid}</td>
+		<td>${u.username}</td>
+		<td>${u.email}</td>
+		<td>${u.githubname}</td>
+		<td>${u.intro}</td>
+		<td>${u.project}</td>
+		<td>${u.stack}</td>
 		<td>${u.regdate}</td>
-		<td>${u.category}</td>
 		<td class="menu">
 			<img class="edit-img" src="https://github.com/EastBean/img/blob/main/screenshot/edit.png?raw=true" alt="수정" onclick="location.href='editform/${u.seq}'">
 			<img class="delete-img" src="https://github.com/EastBean/img/blob/main/screenshot/delete.png?raw=true" alt="삭제" onclick={delete_ok(${u.seq})}>

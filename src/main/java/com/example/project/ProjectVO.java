@@ -1,12 +1,11 @@
 package com.example.project;
 import java.util.Date;
-public class BoardVO {
+public class ProjectVO {
     private int seq;
-    private String category;
-    private String title;
-    private String writer;
-    private String content;
     private Date regdate;
+    private String userid;
+    private String username;
+    private String email;
 
     public int getSeq() {
         return seq;
@@ -14,38 +13,6 @@ public class BoardVO {
 
     public void setSeq(int seq) {
         this.seq = seq;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public Date getRegdate() {
@@ -56,13 +23,73 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
-    public int getCnt() {
-        return cnt;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
-    private int cnt;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGithubname() {
+        return githubname;
+    }
+
+    public void setGithubname(String githubname) {
+        this.githubname = githubname;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getProject() {
+        return project;
+    }
+
+    public void setProject(String project) {
+        this.project = project;
+    }
+
+    public String getStack() {
+        return stack;
+    }
+
+    public void setStack(String stack) {
+        this.stack = stack;
+    }
+
+    private String githubname;
+    private String photo;
+    private String intro;
+    private String project;
+    private String stack;
 }

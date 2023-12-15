@@ -1,10 +1,10 @@
 package com.example.project;
 
 import java.util.List;
-public interface BoardService {
-    public int insertBoard(BoardVO vo);
+public interface ProjectService {
+    public int insertBoard(ProjectVO vo);
     public int deleteBoard(int seq);
-    public int updateBoard(BoardVO vo);
-    public BoardVO getBoard(int seq);
-    public List<BoardVO> getBoardList();
+    public int updateBoard(ProjectVO vo);
+    public ProjectVO getBoard(int seq);
+    public List<ProjectVO> getBoardList();
 }

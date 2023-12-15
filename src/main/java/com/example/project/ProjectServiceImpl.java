@@ -6,32 +6,32 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BoardServiceImpl implements BoardService{
+public class ProjectServiceImpl implements ProjectService {
     @Autowired
-    BoardDAO boardDAO;
+    ProjectDAO projectDAO;
 
     @Override
-    public int insertBoard(BoardVO vo) {
-        return boardDAO.insertBoard(vo);
+    public int insertBoard(ProjectVO vo) {
+        return projectDAO.insertBoard(vo);
     }
 
     @Override
     public int deleteBoard(int seq) {
-        return boardDAO.deleteBoard(seq);
+        return projectDAO.deleteBoard(seq);
     }
 
     @Override
-    public int updateBoard(BoardVO vo) {
-        return boardDAO.updateBoard(vo);
+    public int updateBoard(ProjectVO vo) {
+        return projectDAO.updateBoard(vo);
     }
 
     @Override
-    public BoardVO getBoard(int seq) {
-        return boardDAO.getBoard(seq);
+    public ProjectVO getBoard(int seq) {
+        return projectDAO.getBoard(seq);
     }
 
     @Override
-    public List<BoardVO> getBoardList() {
-        return boardDAO.getBoardList();
+    public List<ProjectVO> getBoardList() {
+        return projectDAO.getBoardList();
     }
 }
