@@ -59,8 +59,14 @@
 
 <!-- Header -->
 <div class="container mt-4">
-	<h2 class="mb-4">Let's Start New Project</h2>
-	<a class="btn btn-primary mb-4" href="add">Add</a>
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="mb-4">Let's Start New Project</h2>
+		</div>
+		<div class="col-md-6 text-end">
+			<a class="btn btn-primary mb-4" href="add">Add</a>
+		</div>
+	</div>
 
 	<!-- Bootstrap Row and Columns -->
 	<div class="row row-cols-1 row-cols-md-2 g-4">
