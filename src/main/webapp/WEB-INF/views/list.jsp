@@ -74,12 +74,12 @@
 			<div class="col">
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">Title: ${u.title}</h5>
+						<h5 class="card-title">${u.title}</h5>
 						<p class="card-text">User ID: ${u.userid}</p>
-						<p class="card-text">${u.username}</p>
+						<!--<p class="card-text">${u.username}</p>
 						<p class="card-text">Email: ${u.email}</p>
 						<p class="card-text">GitHub Name: ${u.githubname}</p>
-						<p class="card-text">Introduction: ${u.intro}</p>
+						<p class="card-text">Introduction: ${u.intro}</p>-->
 						<p class="card-text">Project: ${u.project}</p>
 						<p class="card-text">Stack: ${u.stack}</p>
 						<p class="card-text">${u.regdate}</p>

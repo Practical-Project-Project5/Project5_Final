@@ -99,7 +99,7 @@
             </tr>
             <tr>
                 <td>intro:</td>
-                <td><textarea cols="50" rows="5" name="intro"></textarea></td>
+                <td><textarea cols="50" rows="3" name="intro"></textarea></td>
             </tr>
             <tr>
                 <td>stack:</td>
@@ -107,7 +107,7 @@
             </tr>
             <tr>
                 <td>project:</td>
-                <td><input type="text" name="project"/></td>
+                <td><textarea cols="50" rows="3" name="project"></textarea></td>
             </tr>
         </table>
         <button type="button" onclick="location.href='list'" class="btn btn-secondary">Cancel</button>
