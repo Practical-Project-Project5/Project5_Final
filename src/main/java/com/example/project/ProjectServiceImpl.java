@@ -11,27 +11,27 @@ public class ProjectServiceImpl implements ProjectService {
     ProjectDAO projectDAO;
 
     @Override
-    public int insertBoard(ProjectVO vo) {
-        return projectDAO.insertBoard(vo);
+    public int insertProject(ProjectVO vo) {
+        return projectDAO.insertProject(vo);
     }
 
     @Override
-    public int deleteBoard(int seq) {
-        return projectDAO.deleteBoard(seq);
+    public int deleteProject(int seq) {
+        return projectDAO.deleteProject(seq);
     }
 
     @Override
-    public int updateBoard(ProjectVO vo) {
-        return projectDAO.updateBoard(vo);
+    public int updateProject(ProjectVO vo) {
+        return projectDAO.updateProject(vo);
     }
 
     @Override
-    public ProjectVO getBoard(int seq) {
-        return projectDAO.getBoard(seq);
+    public ProjectVO getProject(int seq) {
+        return projectDAO.getProject(seq);
     }
 
     @Override
-    public List<ProjectVO> getBoardList() {
-        return projectDAO.getBoardList();
+    public List<ProjectVO> getProjectList() {
+        return projectDAO.getProjectList();
     }
 }

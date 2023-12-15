@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProjectDAO">
+    <insert id="insertProject">
+        insert into PROJECT (title, userid, username, email, githubname, intro, project, stack)
+        values (#{title} , #{userid} , #{username} , #{email} , #{githubname} , #{intro} , #{project} , #{stack})
+    </insert>
+    <update id="updateProject">
+        update PROJECT
+        set title=#{title} ,userid=#{userid} ,username=#{username} , email=#{email} , githubname=#{githubname} , intro=#{intro} , project=#{project} , stack=#{stack} where seq=#{seq}
+    </update>
+    <delete id="deleteProject">
+        delete from PROJECT where seq=#{seq}
+    </delete>
+    <select id="getProject" resultType="project">
+        select * from PROJECT where seq=#{seq}
+    </select>
+    <select id="getProjectList" resultType="project">
+        select * from PROJECT order by seq desc
+    </select>
+</mapper>

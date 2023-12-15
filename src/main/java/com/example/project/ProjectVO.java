@@ -3,10 +3,18 @@ import java.util.Date;
 public class ProjectVO {
     private int seq;
     private Date regdate;
-    private String title;
     private String userid;
     private String username;
     private String email;
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public int getSeq() {
         return seq;
@@ -93,12 +101,4 @@ public class ProjectVO {
     private String intro;
     private String project;
     private String stack;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }
