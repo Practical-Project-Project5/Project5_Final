@@ -19,6 +19,8 @@
     <tr><td>email:</td><td>${u.username}</td></tr>
     <tr><td>githubname:</td><td>${u.githubname}</td></tr>
     <tr><td>intro:</td><td>${u.intro}</td></tr>
+    <tr><td>project:</td><td>${u.project}</td></tr>
+    <tr><td>stack:</td><td>${u.stack}</td></tr>
 
 </table>
 <input type="button" value="Cancel" onclick="history.back()"/></td></tr>

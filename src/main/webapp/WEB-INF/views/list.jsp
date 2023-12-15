@@ -1,208 +1,98 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
+		 pageEncoding="UTF-8" isELIgnored="false"%>
 <%@page import="com.example.project.ProjectDAO, com.example.project.ProjectVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>free board</title>
-<style>
-<%--#list {--%>
-<%--  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;--%>
-<%--  border-collapse: collapse;--%>
-<%--  width: 100%;--%>
-<%--}--%>
-<%--#list td, #list th {--%>
-<%--  border: 1px solid #ddd;--%>
-<%--  padding: 8px;--%>
-<%--  text-align:center;--%>
-<%--}--%>
-<%--#list tr:nth-child(even){background-color: #f2f2f2;}--%>
-<%--#list tr:hover {background-color: #ddd;}--%>
-<%--#list th {--%>
-<%--  padding-top: 12px;--%>
-<%--  padding-bottom: 12px;--%>
-<%--  text-align: center;--%>
-<%--  background-color: #79c9f6;--%>
-<%--  color: white;--%>
-<%--}--%>
-<%--.index-myBookManager {--%>
-<%--	padding-top: 12px;--%>
-<%--	width: 300px;--%>
-<%--	font-size: 30px;--%>
-<%--	font-family: Georgia, 'Times New Roman', Times, serif;--%>
-<%--}--%>
-
-<%--.index-myBookManager:hover {--%>
-<%--	cursor: pointer;--%>
-<%--}--%>
-<%--.index-bookList {--%>
-<%--	font-size: 20px;--%>
-<%--	font-family: Georgia, 'Times New Roman', Times, serif;--%>
-<%--	width: 30%;--%>
-<%--}--%>
-
-<%--.index-line1 {--%>
-<%--	box-shadow: 0 4px 4px -4px #808080FF;--%>
-<%--	margin-bottom: 2%;--%>
-<%--	padding-bottom: 1px;--%>
-<%--	display: flex;--%>
-<%--	justify-content: space-between;--%>
-<%--}--%>
-<%--.index-line2 {--%>
-<%--	display: flex;--%>
-<%--	justify-content: space-between;--%>
-<%--	box-shadow: 0 4px 4px -4px #808080FF;--%>
-<%--	/* margin-bottom: 3%; */--%>
-<%--}--%>
-<%--.navbar {--%>
-<%--	margin-top: 10px;--%>
-<%--	margin-right: 5px;--%>
-<%--	width: 280px;--%>
-<%--	right: 0%;--%>
-<%--	/* position: absolute; */--%>
-<%--	display: flex;--%>
-<%--	/* background-color: #333; */--%>
-<%--}--%>
-
-<%--/* Style the navigation bar links */--%>
-<%--.navbar a {--%>
-<%--	height: 40px;--%>
-<%--	width: 100px;--%>
-<%--	color: royalblue;--%>
-<%--	padding-top: 10px;--%>
-<%--	text-decoration: none;--%>
-<%--	text-align: center;--%>
-<%--	border-radius: 10px;--%>
-<%--	margin-bottom: 10px;--%>
-<%--	margin-left: 1px;--%>
-<%--	margin-right: 1px;--%>
-<%--}--%>
-
-<%--/* Change color on hover */--%>
-<%--.navbar a:hover {--%>
-<%--	background-color: royalblue;--%>
-<%--	border-radius: 10px;--%>
-<%--	color: white;--%>
-<%--}--%>
-<%--.add-button {--%>
-<%--	margin-right: 5%;--%>
-<%--	padding-top: 5px;--%>
-<%--	padding-left: 11px;--%>
-<%--	width: 50px;--%>
-<%--	height: 30px;--%>
-<%--	border-radius: 6px;--%>
-<%--	background-color: rgba(20, 137, 33, 0.767);--%>
-<%--	color: white;--%>
-<%--}--%>
-.edit-img {
-	margin-top: 4px;
-	width: 20px;
-	height: 20px;
-	margin-right: 5px;
-}
-
-<%--.edit-img:hover {--%>
-<%--	cursor: pointer;--%>
-<%--}--%>
-
-.delete-img {
-	width: 20px;
-	height: 20px;
-}
-
-<%--.footer {--%>
-<%--	display: flex;--%>
-<%--}--%>
-
-<%--.footer-content {--%>
-<%--	margin-top: 17px;--%>
-<%--	color: grey;--%>
-<%--	font-size: 12px;--%>
-<%--}--%>
-
-<%--.delete-img:hover {--%>
-<%--	cursor: pointer;--%>
-<%--}--%>
-
-<%--.add-button:hover {--%>
-<%--	cursor: pointer;--%>
-<%--}--%>
-
-<%--* {--%>
-<%--	box-sizing: border-box;--%>
-<%--}--%>
-</style>
-<script>
-	function delete_ok(id){
-		var a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deleteok/' + id;
-	}
-</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>PP1 Final Project</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<style>
+		.edit-img {
+			margin-top: 4px;
+			width: 20px;
+			height: 20px;
+			margin-right: 5px;
+		}
+		.footer-line {
+			margin-top: 30px;
+			border-top: 1px solid #ccc;
+		}
+		.project-info {
+			font-size: 12px;
+			margin-top: 10px;
+			color: #555;
+		}
+	</style>
+	<script>
+		function delete_ok(id){
+			var a = confirm("정말로 삭제하겠습니까?");
+			if(a) location.href='deleteok/' + id;
+		}
+	</script>
 </head>
 <body>
-<div>
-	<div class="index-line1">
-		<div class="index-myBookManager" onclick="location.href='list'">&nbsp;My Bulletin Board</div>
-		<!-- Navigation Bar -->
-		<div class="navbar">
-			<a href="#">Home</a>
-			<a href="#">NoStyle</a>
-			<a href="#">Example</a>
-			<a href="#">About</a>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<a class="navbar-brand" href="#">Let's Project</a>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Meeting</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Project</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Study</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Info</a>
+				</li>
+			</ul>
 		</div>
 	</div>
-</div>
+</nav>
 
 <!-- Header -->
-<div class="header">
-	<div class="index-line2">
-		<p class="index-bookList">&nbsp;&nbsp;<b>Board List</b></p>
-		<p class="add-button" onclick="location.href='add'">Add</div>
+<div class="container mt-4">
+	<h2 class="mb-4">Let's Start New Project</h2>
+	<a class="btn btn-primary mb-4" href="add">Add</a>
+
+	<!-- Bootstrap Row and Columns -->
+	<div class="row row-cols-1 row-cols-md-2 g-4">
+		<c:forEach items="${list}" var="u">
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">User ID: ${u.userid}</h5>
+						<p class="card-text">${u.username}</p>
+						<p class="card-text">Email: ${u.email}</p>
+						<p class="card-text">GitHub Name: ${u.githubname}</p>
+						<p class="card-text">Introduction: ${u.intro}</p>
+						<p class="card-text">Project: ${u.project}</p>
+						<p class="card-text">Stack: ${u.stack}</p>
+						<p class="card-text">${u.regdate}</p>
+					</div>
+					<div class="card-footer">
+						<div class="btn-group float-end">
+							<a href="editform/${u.seq}" class="btn btn-outline-secondary">Edit</a>
+							<button class="btn btn-outline-secondary" onclick="delete_ok(${u.seq})">Delete</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
+	<div class="footer-line"></div>
+	<div class="project-info">
+		<p>@실전 프로젝트 project5 team 22 최동빈, 최예라</p>
 </div>
 
-<table id="list" width="90%">
-<tr>
-	<th>Id</th>
-	<th>userid (click->view page)</th>
-	<th>username</th>
-	<th>email</th>
-	<th>githubname</th>
-	<th>intro</th>
-	<th>project</th>
-	<th>stack</th>
-	<th>regdate</th>
-	<th>Menu</th>
-</tr>
-<c:forEach items="${list}" var="u">
-	<tr class="box">
-		<td>${u.seq}</td>
-		<td onclick="location.href='view/${u.seq}'">${u.userid}</td>
-		<td>${u.username}</td>
-		<td>${u.email}</td>
-		<td>${u.githubname}</td>
-		<td>${u.intro}</td>
-		<td>${u.project}</td>
-		<td>${u.stack}</td>
-		<td>${u.regdate}</td>
-		<td class="menu">
-			<img class="edit-img" src="https://github.com/EastBean/img/blob/main/screenshot/edit.png?raw=true" alt="수정" onclick="location.href='editform/${u.seq}'">
-			<img class="delete-img" src="https://github.com/EastBean/img/blob/main/screenshot/delete.png?raw=true" alt="삭제" onclick={delete_ok(${u.seq})}>
-		</td>
-<%--		<td><a href="editform.jsp?id=${u.getSeq()}">Edit</a></td>--%>
-<%--		<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>--%>
-	</tr>
-</c:forEach>
-</table>
-<div class="footer">
-	<svg xmlns="http://www.w3.org/2000/svg" width="12" height="48" fill="gray" class="bi bi-c-circle"
-		 viewBox="0 0 16 16">
-		<path
-				d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z" />
-	</svg>
-	<p class="footer-content">&nbsp;실전 프로젝트 project5 team 22 최동빈, 최예라</p>
-</div>
-<%--<br/><a href="addpostform.jsp">데이터 추가하기</a>--%>
+<!-- Bootstrap JS and Popper.js (Required for Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
