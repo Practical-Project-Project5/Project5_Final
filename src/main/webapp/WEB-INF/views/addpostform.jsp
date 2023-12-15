@@ -98,7 +98,7 @@
                 <td><input type="text" name="githubname"/></td>
             </tr>
             <tr>
-                <td>intro:</td>
+                <td>introduction:</td>
                 <td><textarea cols="50" rows="3" name="intro"></textarea></td>
             </tr>
             <tr>

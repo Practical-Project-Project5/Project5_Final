@@ -89,7 +89,7 @@
 				<tr><td>username:</td><td><form:input path="username"  /></td></tr>
 				<tr><td>email:</td><td><form:input path="email"  /></td></tr>
 				<tr><td>githubname:</td><td><form:input path="githubname"  /></td></tr>
-				<tr><td>intro:</td><td><form:textarea cols="50" rows="3" path="intro" /></td></tr>
+				<tr><td>introduction:</td><td><form:textarea cols="50" rows="3" path="intro" /></td></tr>
 				<tr><td>stack:</td><td><form:input path="stack"  /></td></tr>
 				<tr><td>project:</td><td><form:textarea cols="50" rows="3" path="project"  /></td></tr>
 			</table>
