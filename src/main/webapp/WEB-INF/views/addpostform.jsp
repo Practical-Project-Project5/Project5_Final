@@ -78,6 +78,10 @@
     <form action="addok" method="post">
         <table>
             <tr>
+                <td>title:</td>
+                <td><input type="text" name="title"/></td>
+            </tr>
+            <tr>
                 <td>userid:</td>
                 <td><input type="text" name="userid"/></td>
             </tr>

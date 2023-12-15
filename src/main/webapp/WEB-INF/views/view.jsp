@@ -42,7 +42,8 @@
 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">User ID: ${u.userid}</h5>
+            <h5 class="card-title">Tile: ${u.title}</h5>
+            <p class="card-text">User ID: ${u.userid}</p>
             <p class="card-text">${u.username}</p>
             <p class="card-text">Email: ${u.email}</p>
             <p class="card-text">GitHub Name: ${u.githubname}</p>

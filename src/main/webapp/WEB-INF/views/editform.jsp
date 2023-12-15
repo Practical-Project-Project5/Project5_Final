@@ -84,6 +84,7 @@
 		<form:form modelAttribute="u" method="POST" action="../editok">
 			<form:hidden path="seq"/>
 			<table id="edit">
+				<tr><td>title:</td><td><form:input path="title" /></td></tr>
 				<tr><td>userid:</td><td><form:input path="userid" /></td></tr>
 				<tr><td>username:</td><td><form:input path="username"  /></td></tr>
 				<tr><td>email:</td><td><form:input path="email"  /></td></tr>

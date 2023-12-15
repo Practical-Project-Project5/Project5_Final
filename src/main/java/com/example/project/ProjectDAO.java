@@ -15,7 +15,7 @@ public class ProjectDAO {
     JdbcTemplate jdbcTemplate;
 
     public int insertBoard(ProjectVO vo) {
-        String sql = "insert into PROJECT (userid, username, email, githubname, intro, project, stack) values ("+"'"+vo.getUserid()+"',"+"'"+vo.getUsername()+"',"+"'"+vo.getEmail()+"',"+"'"+vo.getGithubname()+"',"+"'"+vo.getIntro()+"',"+"'"+vo.getProject()+"',"+"'"+vo.getStack()+"')";
+        String sql = "insert into PROJECT (title, userid, username, email, githubname, intro, project, stack) values ("+"'"+vo.getTitle()+"',"+"'"+vo.getUserid()+"',"+"'"+vo.getUsername()+"',"+"'"+vo.getEmail()+"',"+"'"+vo.getGithubname()+"',"+"'"+vo.getIntro()+"',"+"'"+vo.getProject()+"',"+"'"+vo.getStack()+"')";
         return jdbcTemplate.update(sql);
     }
 
@@ -25,6 +25,7 @@ public class ProjectDAO {
     }
     public int updateBoard(ProjectVO vo) {
         String sql = "update PROJECT set userid= '" + vo.getUserid() + "', "
+                + " title='" + vo.getTitle() + "', "
                 + " userid='" + vo.getUserid() + "', "
                 + " username='" + vo.getUsername() + "', "
                 + " email='" + vo.getEmail() + "', "
@@ -39,6 +40,7 @@ public class ProjectDAO {
         public ProjectVO mapRow(ResultSet rs, int rowNum) throws SQLException {
             ProjectVO vo = new ProjectVO();
             vo.setSeq(rs.getInt("seq"));
+            vo.setTitle(rs.getString("title"));
             vo.setUserid(rs.getString("userid"));
             vo.setUsername(rs.getString("username"));
             vo.setEmail(rs.getString("email"));
