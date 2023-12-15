@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
-    window.location.replace("list")
+    window.location.replace("login")
 </script>
 <body>
 
