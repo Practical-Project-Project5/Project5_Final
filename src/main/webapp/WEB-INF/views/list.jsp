@@ -84,6 +84,7 @@
 						<p class="card-text">${u.regdate}</p>
 					</div>
 					<div class="card-footer">
+						<a href="view/${u.seq}" class="btn btn-outline-secondary">More</a>
 						<div class="btn-group float-end">
 							<a href="editform/${u.seq}" class="btn btn-outline-secondary">Edit</a>
 							<button class="btn btn-outline-secondary" onclick="delete_ok(${u.seq})">Delete</button>
